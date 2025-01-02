@@ -3,19 +3,19 @@
 
 namespace GOTHIC_ENGINE {
   struct zTTriggerScript {
+    struct {
+        int Delay;
+        int Enabled;
+        int AIVariables[16];
+    }
+    Parser;
+
     zSTRING FunctionName;
     int Function;
 
     oCNpc* Self;
     oCNpc* Other;
     oCNpc* Victim;
-
-    struct {
-      int Delay;
-      int Enabled;
-      int AIVariables[16];
-    }
-    Parser;
 
     zTTriggerScript();
     bool CallTrigger();

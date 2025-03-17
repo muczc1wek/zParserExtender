@@ -1884,11 +1884,13 @@ namespace GOTHIC_ENGINE {
   }
 
   void DefineExternals() {
-    ActivateDynamicExternal( "", true );
+      ActivateDynamicExternal("", true);
 
-    zCParser::cur_parser = parser;
-    for (auto s : DynamicExternalFuncList) {
-        ActivateDynamicExternal(s);
-    }
+      auto* oldParser = zCParser::cur_parser;
+      zCParser::cur_parser = parser;
+      for (auto s : DynamicExternalFuncList) {
+          ActivateDynamicExternal(s);
+      }
+      zCParser::cur_parser = oldParser;
   }
 }

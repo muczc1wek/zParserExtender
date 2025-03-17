@@ -1864,6 +1864,7 @@ namespace GOTHIC_ENGINE {
     if( ActivateDynamicExternal_Vobs( funcName, createFuncList ) )
       return true;
     
+	zCParser::cur_parser = parserMenu;
     if( ActivateDynamicExternal_Menu( funcName, createFuncList ) )
       return true;
 
@@ -1884,5 +1885,10 @@ namespace GOTHIC_ENGINE {
 
   void DefineExternals() {
     ActivateDynamicExternal( "", true );
+
+    zCParser::cur_parser = parser;
+    for (auto s : DynamicExternalFuncList) {
+        ActivateDynamicExternal(s);
+    }
   }
 }

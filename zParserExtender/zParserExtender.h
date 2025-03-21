@@ -64,6 +64,7 @@ namespace GOTHIC_ENGINE {
     int TestStack;
     int ExtendedSymbolRangeStart;
     int ExtendedSymbolRangeEnd;
+    bool EnableAllExternals;
 
     void CheckExtendedSymbolsStart( zCParser* parser );
     void CheckExtendedSymbolsEnd( zCParser* parser );
@@ -100,7 +101,7 @@ namespace GOTHIC_ENGINE {
     bool HasExternalScript( const string& scriptName );
     bool CheckValidityRecursive( zTScriptInfo* root );
     int GetStringsIndexingMode();
-
+    bool AllExternalsEnabled();
     static int MessagesLevel;
   };
 

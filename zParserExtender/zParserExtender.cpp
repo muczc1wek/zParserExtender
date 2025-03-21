@@ -209,6 +209,7 @@ namespace GOTHIC_ENGINE {
     option.Read( StringsIndexingMode,            "ZPARSE_EXTENDER", "StringsIndexingMode", zStringsIndexing_Default );
     option.Read( TestStack,                      "ZPARSE_EXTENDER", "TestStack",           false );
     option.Read( EarlyParsing,                   "ZPARSE_EXTENDER", "EarlyParsing",        true );
+    option.Read( EnableAllExternals,             "ZPARSE_EXTENDER", "EnableAllExternals",  false );
     DefaultCompileInfo.Compilable = true;
 
     Array<string> Files = FilesLine.Split( "," );
@@ -753,6 +754,10 @@ namespace GOTHIC_ENGINE {
 
   int zCParserExtender::GetStringsIndexingMode() {
     return StringsIndexingMode;
+  }
+
+  bool zCParserExtender::AllExternalsEnabled() {
+    return EnableAllExternals;
   }
 
 
